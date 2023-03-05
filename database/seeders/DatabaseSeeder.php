@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Scan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +15,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'tina',
+            'email' => 'tina@example.com',
+            'password' => '1'
+        ]);
+
+        $scan = \App\Models\Scan::factory(1)->create()->first();
+        \App\Models\Customer::factory(20)->create([
+            'scan_id' => $scan->id
+        ]);
+
     }
 }

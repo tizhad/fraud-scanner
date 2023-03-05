@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Model\Customer;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Scan extends Model
 {
-    public function customers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    use HasFactory;
+    public function customers(): HasMany
     {
         return $this->hasMany(Customer::class);
     }
