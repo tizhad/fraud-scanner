@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model\Scan;
 
 class Customer extends Model
 {
+    use HasFactory;
     public function scan(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Scan::class);
