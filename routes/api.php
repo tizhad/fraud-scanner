@@ -20,7 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/scan', [ScanController::class, 'scan']);
 Route::resource('/scans', ScanController::class);
 Route::resource( 'scans.customers', CustomerController::class);
 
