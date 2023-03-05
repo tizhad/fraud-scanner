@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'tina',
             'email' => 'tina@example.com',
-            'password' => '1'
+            'password' => bcrypt('1')
         ]);
 
         $scan = \App\Models\Scan::factory(1)->create()->first();
