@@ -10,18 +10,18 @@
                 <th  scope="col" class="px-6 py-3">ID</th>
                 <th  scope="col" class="px-6 py-3">IBAN</th>
                 <th  scope="col" class="px-6 py-3">IP</th>
-                <th  scope="col" class="px-6 py-3">Fraud?</th>
+                <th  scope="col" class="px-6 py-3">Fraud</th>
                 <th  scope="col" class="px-6 py-3">Customer ID</th>
                 <th  scope="col" class="px-6 py-3">Created At</th>
             </tr>
             </thead>
             <tbody>
             @foreach($scan->customers as $customer)
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 {{ $customer->is_fraud === 1 ? 'bg-pink-300 dark:bg-red-700' : '' }}">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$customer->id}}</th>
                     <td class="px-6 py-4">{{$customer->iban}}</td>
                     <td class="px-6 py-4">{{$customer->ip_address}}</td>
-                    <td class="px-6 py-4">{{$customer->is_fraud}}</td>
+                    <td class="px-6 py-4">{{$customer->is_fraud === 1? "Fraud Activity" : "Normal Activity"}}</td>
                     <td class="px-6 py-4">{{$customer->customer_id}}</td>
                     <td class="px-6 py-4">{{$customer->created_at}}</td>
                 </tr>
