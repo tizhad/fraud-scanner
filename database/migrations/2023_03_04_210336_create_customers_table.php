@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,10 +19,12 @@ return new class extends Migration
             $table->string('iban');
             $table->timestamps();
             $table->boolean('is_fraud');
+            $table->string('fraud_reason')->nullable();
             $table->unsignedBigInteger('scan_id');
             $table->foreign('scan_id')->references('id')->on('scans');
         });
     }
+
     /**
      * Reverse the migrations.
      */
