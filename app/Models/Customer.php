@@ -10,7 +10,15 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'date_of_birth','phone_number','iban','is_fraud','ip_address'];
+    protected $fillable = [
+        'customer_id',
+        'date_of_birth',
+        'phone_number',
+        'iban',
+        'is_fraud',
+        'fraud_reason',
+        'ip_address'
+    ];
 
     public function scan(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
