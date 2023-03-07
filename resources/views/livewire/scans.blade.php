@@ -18,8 +18,8 @@
                     <th  scope="col" class="px-6 py-3">IBAN</th>
                     <th  scope="col" class="px-6 py-3">IP</th>
                     <th  scope="col" class="px-6 py-3">Fraud</th>
-                    <th  scope="col" class="px-6 py-3">Fraud Reason</th>
                     <th  scope="col" class="px-6 py-3">Customer ID</th>
+                    <th  scope="col" class="px-6 py-3">Fraud Reason</th>
                     <th  scope="col" class="px-6 py-3">Created At</th>
                 </tr>
                 </thead>
