@@ -11,6 +11,9 @@ use Livewire\Component;
 class ScanForm extends Component
 {
     public Scan $scan;
+    public $loading = false;
+
+    public $alertMessage = null;
 
     public function mount()
     {
@@ -24,9 +27,12 @@ class ScanForm extends Component
     public function onScanStart()
     {
         $response = Http::get(config('custom.customer_api_url'));
+        $this->loading = true;
         if (!$response->successful()) {
+            $this->alertMessage = 'Can not get the data, Please try again!';
             return;
-        }
+        };
+        $this->loading = false;
         $this->scan = new Scan;
         $this->scan->save();
         $customers = $response->json()['customers'];
